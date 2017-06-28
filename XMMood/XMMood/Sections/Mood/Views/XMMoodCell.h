@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+
+@class XMMoodCell;
+typedef void(^SelectedBlock)(XMMoodCell *cell);
+
 @class XMMoodModel;
 @interface XMMoodCell : UITableViewCell
 
@@ -16,6 +20,7 @@
 @property (nonatomic, strong) UIButton *collect;
 
 @property (nonatomic, strong) XMMoodModel *model;
+@property (nonatomic, copy) SelectedBlock isSelected;
 
 // 返回cell的高度
 + (CGFloat)xl_cellWithHeight:(XMMoodModel *)model;

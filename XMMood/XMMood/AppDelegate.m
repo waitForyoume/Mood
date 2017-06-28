@@ -25,6 +25,15 @@
     
     self.window.rootViewController = [[XMTabBarViewController alloc] init];
     
+    // 初始化
+    if (![kUSER_DEFAULTS boolForKey:@"kFirstLaunch"]) {
+        [kUSER_DEFAULTS setBool:YES forKey:@"kFirstLaunch"];
+        [kUSER_DEFAULTS setValue:@"16.0f" forKey:@"kNormalFont"];
+        [kUSER_DEFAULTS synchronize];
+    }
+    
+    kManager.xLsize = [[kUSER_DEFAULTS objectForKey:@"kNormalFont"] floatValue];
+    
     return YES;
 }
 

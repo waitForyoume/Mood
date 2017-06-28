@@ -26,6 +26,8 @@
 
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
+    manager.requestSerializer.timeoutInterval = 10;
+    
     [manager GET:url parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

@@ -17,11 +17,18 @@
 #import "UIView+XMAdd.h"
 #import "UIImageView+WebCache.h"
 #import "NSString+XMAdd.h"
+#import "MJRefresh.h"
+#import "FMDB.h"
+#import "XMManager.h"
 
-#define kURL @"http://121.40.207.172/xqmb/listTuwen.do?pageNo=1&imei=99000661879222"
+#define kURL @"http://121.40.207.172/xqmb/listTuwen.do?pageNo=%d&imei=99000661879222"
 
 #define kCOLOR_RGBA(R, G, B, A) [UIColor colorWithRed:(R) / 255.0f green:(G) / 255.0f blue:(B) / 255.0f alpha:(A)]
 #define kSCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define kSCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+#define kCOLOR [UIColor colorWithRed:238.0f / 255.0f green:238.0f / 255.0f blue:238.0f / 255.0f alpha:1]
+#define kFONT_COLOR kCOLOR_RGBA(16, 16, 16, 1)
+#define kUSER_DEFAULTS [NSUserDefaults standardUserDefaults]
 
 #endif /* XMPrefixHeader_pch */

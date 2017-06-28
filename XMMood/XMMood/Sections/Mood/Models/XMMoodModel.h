@@ -14,6 +14,7 @@
 @property (nonatomic, copy) NSString *infomation; // description
 @property (nonatomic, copy) NSString *img;
 @property (nonatomic, copy) NSString *type;
+@property (nonatomic, assign) BOOL isSelected;
 
 - (id)initWithDictionary:(NSDictionary *)dic;
 + (id)moodModelWithDictionary:(NSDictionary *)dic;
