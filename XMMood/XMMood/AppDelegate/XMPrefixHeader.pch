@@ -1,0 +1,27 @@
+//
+//  XMPrefixHeader.pch
+//  XMMood
+//
+//  Created by panda on 17/6/27.
+//  Copyright © 2017年 街路口等你. All rights reserved.
+//
+
+#ifndef XMPrefixHeader_pch
+#define XMPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "AFNetworking.h"
+#import "XMHttpManager.h"
+#import "UIView+XMAdd.h"
+#import "UIImageView+WebCache.h"
+#import "NSString+XMAdd.h"
+
+#define kURL @"http://121.40.207.172/xqmb/listTuwen.do?pageNo=1&imei=99000661879222"
+
+#define kCOLOR_RGBA(R, G, B, A) [UIColor colorWithRed:(R) / 255.0f green:(G) / 255.0f blue:(B) / 255.0f alpha:(A)]
+#define kSCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define kSCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+#endif /* XMPrefixHeader_pch */
