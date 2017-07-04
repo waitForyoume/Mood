@@ -19,6 +19,7 @@
     
     // 设置标题
     self.navigationItem.title = @"收藏";
+
 }
 
 - (void)didReceiveMemoryWarning {

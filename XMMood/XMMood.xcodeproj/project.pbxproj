@@ -89,6 +89,8 @@
 		BA47EABD1F0109CD00B7F2AE /* XMMoodUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA47EABC1F0109CD00B7F2AE /* XMMoodUITests.m */; };
 		BA47EAD31F010ADD00B7F2AE /* XMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA47EAD21F010ADD00B7F2AE /* XMTabBarViewController.m */; };
 		BA47EAE21F010B4F00B7F2AE /* XMMoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA47EAE11F010B4F00B7F2AE /* XMMoodViewController.m */; };
+		BA8A62701F0B7647001B4E8D /* XMFMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8A626F1F0B7647001B4E8D /* XMFMDBManager.m */; };
+		BA8A62731F0B7A0B001B4E8D /* XMLoveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8A62721F0B7A0B001B4E8D /* XMLoveModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -271,6 +273,10 @@
 		BA47EAD21F010ADD00B7F2AE /* XMTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMTabBarViewController.m; sourceTree = "<group>"; };
 		BA47EAE01F010B4F00B7F2AE /* XMMoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMMoodViewController.h; sourceTree = "<group>"; };
 		BA47EAE11F010B4F00B7F2AE /* XMMoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMMoodViewController.m; sourceTree = "<group>"; };
+		BA8A626E1F0B7647001B4E8D /* XMFMDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMFMDBManager.h; sourceTree = "<group>"; };
+		BA8A626F1F0B7647001B4E8D /* XMFMDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMFMDBManager.m; sourceTree = "<group>"; };
+		BA8A62711F0B7A0B001B4E8D /* XMLoveModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLoveModel.h; sourceTree = "<group>"; };
+		BA8A62721F0B7A0B001B4E8D /* XMLoveModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLoveModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -577,7 +583,6 @@
 			isa = PBXGroup;
 			children = (
 				BA47EACA1F0109E400B7F2AE /* AppDelegate */,
-				BA47EACB1F0109E400B7F2AE /* Frameworks */,
 				BA47EACC1F0109E400B7F2AE /* Generals */,
 				BA47EACD1F0109E400B7F2AE /* Helpers */,
 				BA47EACE1F0109E400B7F2AE /* Resource */,
@@ -625,13 +630,6 @@
 				BA163C391F01FEB900FE64FD /* XMPrefixHeader.pch */,
 			);
 			path = AppDelegate;
-			sourceTree = "<group>";
-		};
-		BA47EACB1F0109E400B7F2AE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		BA47EACC1F0109E400B7F2AE /* Generals */ = {
@@ -745,6 +743,10 @@
 		BA47EADA1F010B1E00B7F2AE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BA8A626E1F0B7647001B4E8D /* XMFMDBManager.h */,
+				BA8A626F1F0B7647001B4E8D /* XMFMDBManager.m */,
+				BA8A62711F0B7A0B001B4E8D /* XMLoveModel.h */,
+				BA8A62721F0B7A0B001B4E8D /* XMLoveModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -862,6 +864,7 @@
 				TargetAttributes = {
 					BA47EA991F0109CD00B7F2AE = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = V2PRMX9B5Z;
 						ProvisioningStyle = Automatic;
 					};
 					BA47EAAC1F0109CD00B7F2AE = {
@@ -966,6 +969,7 @@
 				BA132CF31F034D50002BD39B /* MJRefreshGifHeader.m in Sources */,
 				BA132D131F035BC9002BD39B /* FMResultSet.m in Sources */,
 				BA163C771F0230FD00FE64FD /* UIProgressView+AFNetworking.m in Sources */,
+				BA8A62731F0B7A0B001B4E8D /* XMLoveModel.m in Sources */,
 				BA163C3C1F022E4C00FE64FD /* XMMoodCell.m in Sources */,
 				BA163CAB1F0245F500FE64FD /* UIImageView+HighlightedWebCache.m in Sources */,
 				BA132D0E1F035BC9002BD39B /* README.markdown in Sources */,
@@ -984,6 +988,7 @@
 				BA163C6B1F0230FD00FE64FD /* AFSecurityPolicy.m in Sources */,
 				BA163CA01F0245F500FE64FD /* NSData+ImageContentType.m in Sources */,
 				BA132CF11F034D50002BD39B /* MJRefreshBackNormalFooter.m in Sources */,
+				BA8A62701F0B7647001B4E8D /* XMFMDBManager.m in Sources */,
 				BA132CF71F034D50002BD39B /* MJRefreshConst.m in Sources */,
 				BA132D111F035BC9002BD39B /* FMDatabasePool.m in Sources */,
 				BA163C6C1F0230FD00FE64FD /* AFURLRequestSerialization.m in Sources */,
@@ -1144,7 +1149,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = V2PRMX9B5Z;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XMMood/AppDelegate/XMPrefixHeader.pch";
 				INFOPLIST_FILE = XMMood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1158,7 +1163,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = V2PRMX9B5Z;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XMMood/AppDelegate/XMPrefixHeader.pch";
 				INFOPLIST_FILE = XMMood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -9,6 +9,7 @@
 #import "XMMoodViewController.h"
 #import "XMMoodCell.h"
 #import "XMMoodModel.h"
+#import "XMLoveModel.h"
 
 @interface XMMoodViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -105,7 +106,21 @@
         moodModel.isSelected = cell.collect.selected;
         [self.moodTableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
         
+        if (moodModel.isSelected) {
         
+            XMLoveModel *isModel = [XMFMDBManager xl_queryWithByIdentifier:moodModel.mood_id];
+            if ([isModel.mood_id isEqualToString:moodModel.mood_id]) {
+                
+                return;
+            }
+            
+            XMLoveModel *loveModel = [XMLoveModel loveModelWithInfomation:moodModel.infomation url:moodModel.img isSelected:moodModel.isSelected moodId:moodModel.mood_id];
+            [XMFMDBManager xl_insertIntoWithModel:loveModel];
+        }
+        else {
+            
+            [XMFMDBManager xl_deleteByRowId:moodModel.mood_id];
+        }
         
     };
     

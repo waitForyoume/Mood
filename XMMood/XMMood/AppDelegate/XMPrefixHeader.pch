@@ -20,6 +20,7 @@
 #import "MJRefresh.h"
 #import "FMDB.h"
 #import "XMManager.h"
+#import "XMFMDBManager.h"
 
 #define kURL @"http://121.40.207.172/xqmb/listTuwen.do?pageNo=%d&imei=99000661879222"
 
