@@ -13,7 +13,7 @@
 @interface XMFMDBManager ()
 
 @property (nonatomic, strong) FMDatabase *fmdb;
-@property (nonatomic, strong) NSMutableArray *resourceArray;
+@property (nonatomic, strong) NSMutableArray<XMLoveModel *> *resourceArray;
 
 @end
 
@@ -44,7 +44,7 @@ static XMFMDBManager *manager = nil;
     }
     
     // 创建表
-    [self.fmdb executeUpdate:@"create table if not exists Love(item_id integer primary key autoincrement, item_info text, item_url text, item_isSelected bool, item_moodId text)"]; // item_image blob
+    [self.fmdb executeUpdate:@"create table if not exists Love(item_id integer primary key autoincrement, item_info text, item_url text, itme_image blob, item_isSelected bool, item_moodId text)"]; // item_image blob
     
     // 关闭数据库
     [self.fmdb close];
@@ -60,7 +60,7 @@ static XMFMDBManager *manager = nil;
         return NO;
     }
     
-    BOOL isSuccess = [manager.fmdb executeUpdate:@"insert into Love(item_info, item_url, item_isSelected, item_moodId) values(?, ?, ?, ?)", model.infomation, model.img, @(model.isSelected), model.mood_id];
+    BOOL isSuccess = [manager.fmdb executeUpdate:@"insert into Love(item_info, item_url, itme_image, item_isSelected, item_moodId) values(?, ?, ?, ?, ?)", model.infomation, model.img_url, model.imageData, @(model.isSelected), model.mood_id];
 
     return isSuccess;
 }
@@ -100,8 +100,9 @@ static XMFMDBManager *manager = nil;
         NSString *url = [result stringForColumn:@"item_url"];
         BOOL isSelected = [result boolForColumn:@"item_isSelected"];
         NSString *moodId = [result stringForColumn:@"item_moodId"];
+        NSData *imageData = [result dataForColumn:@"itme_image"];
         
-        XMLoveModel *model = [XMLoveModel loveModelWithInfomation:info url:url isSelected:isSelected moodId:moodId];
+        XMLoveModel *model = [XMLoveModel loveModelWithInfomation:info url:url image:[UIImage imageWithData: imageData] isSelected:isSelected moodId:moodId];
         [manager.resourceArray addObject:model];
     }
 
@@ -125,8 +126,9 @@ static XMFMDBManager *manager = nil;
         NSString *url = [result stringForColumn:@"item_url"];
         BOOL isSelected = [result boolForColumn:@"item_isSelected"];
         NSString *moodId = [result stringForColumn:@"item_moodId"];
+        NSData *imageData = [result dataForColumn:@"itme_image"];
         
-        model = [XMLoveModel loveModelWithInfomation:info url:url isSelected:isSelected moodId:moodId];
+        model = [XMLoveModel loveModelWithInfomation:info url:url image:[UIImage imageWithData: imageData] isSelected:isSelected moodId:moodId];
     }
     
     // 关闭数据库
@@ -140,7 +142,7 @@ static XMFMDBManager *manager = nil;
     return manager.resourceArray;
 }
 
-- (NSMutableArray *)resourceArray {
+- (NSMutableArray<XMLoveModel *> *)resourceArray {
     if (!_resourceArray) {
         self.resourceArray = [NSMutableArray array];
     }

@@ -80,6 +80,11 @@
     for (NSDictionary *dic in (NSArray *)response[@"data"]) {
         
         XMMoodModel *moodModel = [XMMoodModel moodModelWithDictionary:dic];
+        XMLoveModel *isModel = [XMFMDBManager xl_queryWithByIdentifier:moodModel.mood_id];
+        if (isModel != nil) {
+            moodModel.isSelected = YES;
+        }
+        
         [self.resourceArray addObject:moodModel];
     }
     
@@ -114,8 +119,8 @@
                 return;
             }
             
-//            XMLoveModel *loveModel = [XMLoveModel loveModelWithInfomation:moodModel.infomation url:moodModel.img isSelected:moodModel.isSelected moodId:moodModel.mood_id];
-//            [XMFMDBManager xl_insertIntoWithModel:loveModel];
+            XMLoveModel *loveModel = [XMLoveModel loveModelWithInfomation:moodModel.infomation url:moodModel.img_url image:moodModel.image isSelected:moodModel.isSelected moodId:moodModel.mood_id];
+            [XMFMDBManager xl_insertIntoWithModel:loveModel];
         }
         else {
             

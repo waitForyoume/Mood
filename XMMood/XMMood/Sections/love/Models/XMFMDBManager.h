@@ -24,7 +24,7 @@
 // 改
 + (BOOL)xl_updateWithModel:(XMLoveModel *)model;
 
-// 插叙某条数据是否存在
+// 查询某条数据是否存在
 + (XMLoveModel *)xl_queryWithByIdentifier:(NSString *)identifier;
 
 // 查

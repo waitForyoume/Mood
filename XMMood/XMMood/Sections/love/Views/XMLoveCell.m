@@ -1,17 +1,17 @@
 //
-//  XMMoodCell.m
+//  XMLoveCell.m
 //  XMMood
 //
-//  Created by panda on 17/6/27.
+//  Created by panda on 17/9/22.
 //  Copyright © 2017年 街路口等你. All rights reserved.
 //
 
-#import "XMMoodCell.h"
-#import "XMMoodModel.h"
+#import "XMLoveCell.h"
+#import "XMLoveModel.h"
 
 #define lWIDTH (kSCREEN_WIDTH - 15 * 2)
 
-@interface XMMoodCell ()
+@interface XMLoveCell ()
 
 @property (nonatomic, strong) UIView *normalView;
 @property (nonatomic, strong) UIImage *xlImage;
@@ -19,7 +19,7 @@
 @end
 
 
-@implementation XMMoodCell
+@implementation XMLoveCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -30,17 +30,18 @@
         [self.contentView addSubview:self.normalView];
         [self.normalView addSubview:self.imgView];
         [self.normalView addSubview:self.infomationL];
-        [self.normalView addSubview:self.collect]; // 收藏
+        
+//        [self.normalView addSubview:self.collect]; // 收藏
     }
     return self;
 }
 
-- (void)setModel:(XMMoodModel *)model {
+- (void)setModel:(XMLoveModel *)model {
     
     if (_model != model) {
         _model = model;
     }
-
+    
     // 重新布局
     _normalView.left = 0;
     _normalView.top = 0;
@@ -52,24 +53,22 @@
     _imgView.width = kSCREEN_WIDTH;
     
     if (_model.image == NULL) {
-    
+        
         _collect.hidden = YES;
         _imgView.height = 5.0f;
-//        _imgView.image = [UIImage imageNamed:@"Normal"];
     }
     else {
+        
         _collect.hidden = NO;
         CGFloat height = (_model.image.size.height * kSCREEN_WIDTH) / _model.image.size.width;
         _imgView.height = height;
         _imgView.image = _model.image;
     }
-
-//    [_imgView sd_setImageWithURL:[NSURL URLWithString:model.img] placeholderImage:[self scaleToSize:[UIImage imageNamed:@"Normal"] size:CGSizeMake(kSCREEN_WIDTH, 258.0f)]];
-
+    
     _infomationL.left = 15.0f;
     _infomationL.top = _imgView.bottom + 10.0f;
     _infomationL.width = lWIDTH;
-
+    
     CGFloat lHeight = [_model.infomation sizeWithFont:[UIFont systemFontOfSize:kManager.xLsize] withMaxSize:CGSizeMake(lWIDTH, MAXFLOAT)].height;
     int numberLine = lHeight / _infomationL.font.lineHeight;
     NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:_model.infomation];
@@ -85,20 +84,20 @@
     _collect.width = 25.0f;
     _collect.height = 25.0f;
     
-    _collect.selected = _model.isSelected;
+//    _collect.selected = _model.isSelected;
 }
 
-+ (CGFloat)xl_cellWithHeight:(XMMoodModel *)model {
++ (CGFloat)xl_cellWithHeight:(XMLoveModel *)model {
     
     CGFloat lHeight = [model.infomation sizeWithFont:[UIFont systemFontOfSize:kManager.xLsize] withMaxSize:CGSizeMake(lWIDTH, MAXFLOAT)].height;
     int numberLine = lHeight / [UIFont systemFontOfSize:16].lineHeight;
     
     if (model.image == NULL) { // 258.0
-        return 1.0 + lHeight + numberLine * 3.5 + 20.0f + 10.0f + 30.0f; // lHeight + numberLine * 3.5 + 8 + 10;
+        return 1.0 + lHeight + numberLine * 3.5 + 20.0f + 10.0f + 30.0f - 25.0f/* 减去收藏的高度 */; // lHeight + numberLine * 3.5 + 8 + 10;
     }
     else {
         CGFloat height = (model.image.size.height * kSCREEN_WIDTH) / model.image.size.width;
-        return height + lHeight + numberLine * 3.5 + 20.0f + 10.0f + 30.0f; // lHeight + numberLine * 3.5 + 8 + 10;
+        return height + lHeight + numberLine * 3.5 + 20.0f + 10.0f + 30.0f - 25.0f/* 减去收藏的高度 */; // lHeight + numberLine * 3.5 + 8 + 10;
     }
 }
 
@@ -115,7 +114,7 @@
     if (!_imgView) {
         self.imgView = [[UIImageView alloc] init];
         _imgView.contentMode = UIViewContentModeScaleAspectFill;
-//        _imgView.image = [self scaleToSize:[UIImage imageNamed:@"Normal"] size:CGSizeMake(kSCREEN_WIDTH, 258.0f)];
+        //        _imgView.image = [self scaleToSize:[UIImage imageNamed:@"Normal"] size:CGSizeMake(kSCREEN_WIDTH, 258.0f)];
     }
     return _imgView;
 }
@@ -150,15 +149,6 @@
     if (self.isSelected) {
         self.isSelected(self);
     }
-}
-
-- (UIImage *)scaleToSize:(UIImage *)image size:(CGSize)size {
-    UIGraphicsBeginImageContext(size);
-    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
-    UIImage *endImage = UIGraphicsGetImageFromCurrentImageContext();
-    
-    UIGraphicsEndImageContext();
-    return endImage;
 }
 
 @end

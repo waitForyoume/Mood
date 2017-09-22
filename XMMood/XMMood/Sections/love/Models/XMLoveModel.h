@@ -11,20 +11,24 @@
 @interface XMLoveModel : NSObject
 
 @property (nonatomic, copy) NSString *infomation; // description
-@property (nonatomic, copy) NSString *img;
+@property (nonatomic, copy) NSString *img_url;
+@property (nonatomic, strong) UIImage *image;
 @property (nonatomic, copy) NSString *mood_id;
+@property (nonatomic, strong) NSData *imageData;
 
 @property (nonatomic, assign) BOOL isSelected;
 
 
 - (id)initWithInfomation:(NSString *)info
                      url:(NSString *)url
+                   image:(UIImage *)image
               isSelected:(BOOL)isSelected
                   moodId:(NSString *)moodId;
 
 
 + (id)loveModelWithInfomation:(NSString *)info
                           url:(NSString *)url
+                        image:(UIImage *)image
                    isSelected:(BOOL)isSelected
                        moodId:(NSString *)moodId;
 

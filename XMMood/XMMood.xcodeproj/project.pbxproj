@@ -89,6 +89,7 @@
 		BA47EABD1F0109CD00B7F2AE /* XMMoodUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA47EABC1F0109CD00B7F2AE /* XMMoodUITests.m */; };
 		BA47EAD31F010ADD00B7F2AE /* XMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA47EAD21F010ADD00B7F2AE /* XMTabBarViewController.m */; };
 		BA47EAE21F010B4F00B7F2AE /* XMMoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA47EAE11F010B4F00B7F2AE /* XMMoodViewController.m */; };
+		BA5B60371F74B85D0093CE1D /* XMLoveCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5B60361F74B85D0093CE1D /* XMLoveCell.m */; };
 		BA8A62701F0B7647001B4E8D /* XMFMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8A626F1F0B7647001B4E8D /* XMFMDBManager.m */; };
 		BA8A62731F0B7A0B001B4E8D /* XMLoveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8A62721F0B7A0B001B4E8D /* XMLoveModel.m */; };
 /* End PBXBuildFile section */
@@ -273,6 +274,8 @@
 		BA47EAD21F010ADD00B7F2AE /* XMTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMTabBarViewController.m; sourceTree = "<group>"; };
 		BA47EAE01F010B4F00B7F2AE /* XMMoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMMoodViewController.h; sourceTree = "<group>"; };
 		BA47EAE11F010B4F00B7F2AE /* XMMoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMMoodViewController.m; sourceTree = "<group>"; };
+		BA5B60351F74B85D0093CE1D /* XMLoveCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLoveCell.h; sourceTree = "<group>"; };
+		BA5B60361F74B85D0093CE1D /* XMLoveCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLoveCell.m; sourceTree = "<group>"; };
 		BA8A626E1F0B7647001B4E8D /* XMFMDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMFMDBManager.h; sourceTree = "<group>"; };
 		BA8A626F1F0B7647001B4E8D /* XMFMDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMFMDBManager.m; sourceTree = "<group>"; };
 		BA8A62711F0B7A0B001B4E8D /* XMLoveModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLoveModel.h; sourceTree = "<group>"; };
@@ -754,6 +757,8 @@
 		BA47EADB1F010B1E00B7F2AE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BA5B60351F74B85D0093CE1D /* XMLoveCell.h */,
+				BA5B60361F74B85D0093CE1D /* XMLoveCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -937,6 +942,7 @@
 			files = (
 				BA163C711F0230FD00FE64FD /* AFAutoPurgingImageCache.m in Sources */,
 				BA132CF01F034D50002BD39B /* MJRefreshBackGifFooter.m in Sources */,
+				BA5B60371F74B85D0093CE1D /* XMLoveCell.m in Sources */,
 				BA132CEC1F034D50002BD39B /* MJRefreshHeader.m in Sources */,
 				BA132CEB1F034D50002BD39B /* MJRefreshFooter.m in Sources */,
 				BA132CFC1F034D50002BD39B /* README.md in Sources */,

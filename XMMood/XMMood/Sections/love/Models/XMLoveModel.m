@@ -12,25 +12,29 @@
 
 - (id)initWithInfomation:(NSString *)info
                      url:(NSString *)url
+                   image:(UIImage *)image
               isSelected:(BOOL)isSelected
                   moodId:(NSString *)moodId {
     self = [super init];
     if (self) {
         
         _infomation = info;
-        _img = url;
+        _img_url = url;
+        _image = image;
         _isSelected = isSelected;
         _mood_id = moodId;
+        _imageData = UIImagePNGRepresentation(image);
     }
     return self;
 }
 
 + (id)loveModelWithInfomation:(NSString *)info
                           url:(NSString *)url
+                        image:(UIImage *)image
                    isSelected:(BOOL)isSelected
                        moodId:(NSString *)moodId {
     
-    return [[self alloc] initWithInfomation:info url:url isSelected:isSelected moodId:moodId];
+    return [[self alloc] initWithInfomation: info url: url image: image isSelected: isSelected moodId: moodId];
 }
 
 
