@@ -24,7 +24,23 @@
 }
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key {
-    if ([key isEqualToString:@"id"]) {
+    
+    if ([key isEqualToString:@"img"]) {
+        
+        self.img_url = (NSString *)value;
+        
+        [[SDWebImageManager sharedManager] downloadImageWithURL: [NSURL URLWithString:value]
+                                                        options: SDWebImageAvoidAutoSetImage
+                                                       progress: nil
+                                                      completed: ^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                                                          
+                                                          
+                                                          self.image = image;
+                                                
+                                                      }];
+        
+    }
+    else if ([key isEqualToString:@"id"]) {
         
         self.mood_id = (NSString *)value;
     }

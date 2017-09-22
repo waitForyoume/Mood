@@ -114,8 +114,8 @@
                 return;
             }
             
-            XMLoveModel *loveModel = [XMLoveModel loveModelWithInfomation:moodModel.infomation url:moodModel.img isSelected:moodModel.isSelected moodId:moodModel.mood_id];
-            [XMFMDBManager xl_insertIntoWithModel:loveModel];
+//            XMLoveModel *loveModel = [XMLoveModel loveModelWithInfomation:moodModel.infomation url:moodModel.img isSelected:moodModel.isSelected moodId:moodModel.mood_id];
+//            [XMFMDBManager xl_insertIntoWithModel:loveModel];
         }
         else {
             

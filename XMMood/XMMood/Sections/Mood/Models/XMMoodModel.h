@@ -12,8 +12,10 @@
 
 @property (nonatomic, copy) NSString *mood_id;
 @property (nonatomic, copy) NSString *infomation; // description
-@property (nonatomic, copy) NSString *img;
+@property (nonatomic, copy) NSString *img_url;
 @property (nonatomic, copy) NSString *type;
+@property (nonatomic, strong) UIImage *image;
+
 @property (nonatomic, assign) BOOL isSelected;
 
 - (id)initWithDictionary:(NSDictionary *)dic;

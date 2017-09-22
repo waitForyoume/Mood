@@ -36,6 +36,10 @@
 }
 
 - (void)setModel:(XMMoodModel *)model {
+    
+    if (_model != model) {
+        _model = model;
+    }
 
     // 重新布局
     _normalView.left = 0;
@@ -46,7 +50,17 @@
     _imgView.top = 0;
     _imgView.left = 0;
     _imgView.width = kSCREEN_WIDTH;
-    _imgView.height = 258.0f;
+    
+    if (_model.image == NULL) {
+    
+        _imgView.height = 1.0f;
+//        _imgView.image = [UIImage imageNamed:@"Normal"];
+    }
+    else {
+        CGFloat height = (_model.image.size.height * kSCREEN_WIDTH) / _model.image.size.width;
+        _imgView.height = height;
+        _imgView.image = _model.image;
+    }
 
 //    [_imgView sd_setImageWithURL:[NSURL URLWithString:model.img] placeholderImage:[self scaleToSize:[UIImage imageNamed:@"Normal"] size:CGSizeMake(kSCREEN_WIDTH, 258.0f)]];
 
@@ -54,10 +68,9 @@
     _infomationL.top = _imgView.bottom + 10.0f;
     _infomationL.width = lWIDTH;
 
-    
-    CGFloat lHeight = [model.infomation sizeWithFont:[UIFont systemFontOfSize:kManager.xLsize] withMaxSize:CGSizeMake(lWIDTH, MAXFLOAT)].height;
+    CGFloat lHeight = [_model.infomation sizeWithFont:[UIFont systemFontOfSize:kManager.xLsize] withMaxSize:CGSizeMake(lWIDTH, MAXFLOAT)].height;
     int numberLine = lHeight / _infomationL.font.lineHeight;
-    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:model.infomation];
+    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:_model.infomation];
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.lineSpacing = 3.5f;
     [attrString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, model.infomation.length)];
@@ -65,26 +78,26 @@
     _infomationL.height = lHeight + numberLine * 3.5;
     _infomationL.font = [UIFont systemFontOfSize:kManager.xLsize];
     
-    [_imgView sd_setImageWithURL:[NSURL URLWithString:model.img] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        CGFloat height = (image.size.height * kSCREEN_WIDTH) / image.size.width;
-        _imgView.image = [self scaleToSize:image size:CGSizeMake(kSCREEN_WIDTH, 258)];
-        
-        self.xlImage = image;
-    }];
-    
     _collect.left = kSCREEN_WIDTH - 40.0f;
     _collect.top = _infomationL.bottom + 5.0f;
     _collect.width = 25.0f;
     _collect.height = 25.0f;
     
-    _collect.selected = model.isSelected;
+    _collect.selected = _model.isSelected;
 }
 
 + (CGFloat)xl_cellWithHeight:(XMMoodModel *)model {
     
     CGFloat lHeight = [model.infomation sizeWithFont:[UIFont systemFontOfSize:kManager.xLsize] withMaxSize:CGSizeMake(lWIDTH, MAXFLOAT)].height;
     int numberLine = lHeight / [UIFont systemFontOfSize:16].lineHeight;
-    return 258.0 + lHeight + numberLine * 3.5 + 20.0f + 10.0f + 30.0f; // lHeight + numberLine * 3.5 + 8 + 10;
+    
+    if (model.image == NULL) { // 258.0
+        return 1.0 + lHeight + numberLine * 3.5 + 20.0f + 10.0f + 30.0f; // lHeight + numberLine * 3.5 + 8 + 10;
+    }
+    else {
+        CGFloat height = (model.image.size.height * kSCREEN_WIDTH) / model.image.size.width;
+        return height + lHeight + numberLine * 3.5 + 20.0f + 10.0f + 30.0f; // lHeight + numberLine * 3.5 + 8 + 10;
+    }
 }
 
 - (UIView *)normalView {
@@ -100,7 +113,7 @@
     if (!_imgView) {
         self.imgView = [[UIImageView alloc] init];
         _imgView.contentMode = UIViewContentModeScaleAspectFill;
-        _imgView.image = [self scaleToSize:[UIImage imageNamed:@"Normal"] size:CGSizeMake(kSCREEN_WIDTH, 258.0f)];
+//        _imgView.image = [self scaleToSize:[UIImage imageNamed:@"Normal"] size:CGSizeMake(kSCREEN_WIDTH, 258.0f)];
     }
     return _imgView;
 }
