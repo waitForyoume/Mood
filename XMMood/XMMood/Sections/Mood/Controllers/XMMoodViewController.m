@@ -23,6 +23,8 @@
 
 @end
 
+// http://www.wenzizhan.com/AppServiceNew/Feel.asmx/GetList_Page?pageIndex=1&pageSize=20
+
 @implementation XMMoodViewController
 
 - (void)viewDidLoad {

@@ -83,12 +83,12 @@
 		BA163CB01F025CFE00FE64FD /* NSString+XMAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = BA163CAF1F025CFE00FE64FD /* NSString+XMAdd.m */; };
 		BA47EA9F1F0109CD00B7F2AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA47EA9E1F0109CD00B7F2AE /* main.m */; };
 		BA47EAA21F0109CD00B7F2AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA47EAA11F0109CD00B7F2AE /* AppDelegate.m */; };
-		BA47EAA41F0109CD00B7F2AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA47EAA31F0109CD00B7F2AE /* Assets.xcassets */; };
 		BA47EAA71F0109CD00B7F2AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA47EAA51F0109CD00B7F2AE /* LaunchScreen.storyboard */; };
 		BA47EAB21F0109CD00B7F2AE /* XMMoodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA47EAB11F0109CD00B7F2AE /* XMMoodTests.m */; };
 		BA47EABD1F0109CD00B7F2AE /* XMMoodUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA47EABC1F0109CD00B7F2AE /* XMMoodUITests.m */; };
 		BA47EAD31F010ADD00B7F2AE /* XMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA47EAD21F010ADD00B7F2AE /* XMTabBarViewController.m */; };
 		BA47EAE21F010B4F00B7F2AE /* XMMoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA47EAE11F010B4F00B7F2AE /* XMMoodViewController.m */; };
+		BA496C711F78896F00D4CE41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA496C701F78896F00D4CE41 /* Assets.xcassets */; };
 		BA5B60371F74B85D0093CE1D /* XMLoveCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA5B60361F74B85D0093CE1D /* XMLoveCell.m */; };
 		BA8A62701F0B7647001B4E8D /* XMFMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8A626F1F0B7647001B4E8D /* XMFMDBManager.m */; };
 		BA8A62731F0B7A0B001B4E8D /* XMLoveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8A62721F0B7A0B001B4E8D /* XMLoveModel.m */; };
@@ -261,7 +261,6 @@
 		BA47EA9E1F0109CD00B7F2AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BA47EAA01F0109CD00B7F2AE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = XMMood/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		BA47EAA11F0109CD00B7F2AE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = XMMood/AppDelegate.m; sourceTree = SOURCE_ROOT; };
-		BA47EAA31F0109CD00B7F2AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA47EAA61F0109CD00B7F2AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA47EAA81F0109CD00B7F2AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA47EAAD1F0109CD00B7F2AE /* XMMoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XMMoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -274,6 +273,7 @@
 		BA47EAD21F010ADD00B7F2AE /* XMTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMTabBarViewController.m; sourceTree = "<group>"; };
 		BA47EAE01F010B4F00B7F2AE /* XMMoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMMoodViewController.h; sourceTree = "<group>"; };
 		BA47EAE11F010B4F00B7F2AE /* XMMoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMMoodViewController.m; sourceTree = "<group>"; };
+		BA496C701F78896F00D4CE41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA5B60351F74B85D0093CE1D /* XMLoveCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLoveCell.h; sourceTree = "<group>"; };
 		BA5B60361F74B85D0093CE1D /* XMLoveCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLoveCell.m; sourceTree = "<group>"; };
 		BA8A626E1F0B7647001B4E8D /* XMFMDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMFMDBManager.h; sourceTree = "<group>"; };
@@ -591,8 +591,8 @@
 				BA47EACE1F0109E400B7F2AE /* Resource */,
 				BA47EACF1F0109E400B7F2AE /* Sections */,
 				BA47EAD01F0109E400B7F2AE /* Vendors */,
-				BA47EAA31F0109CD00B7F2AE /* Assets.xcassets */,
 				BA47EAA51F0109CD00B7F2AE /* LaunchScreen.storyboard */,
+				BA496C701F78896F00D4CE41 /* Assets.xcassets */,
 				BA47EAA81F0109CD00B7F2AE /* Info.plist */,
 				BA47EA9D1F0109CD00B7F2AE /* Supporting Files */,
 			);
@@ -910,10 +910,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA163C6F1F0230FD00FE64FD /* LICENSE in Resources */,
-				BA47EAA41F0109CD00B7F2AE /* Assets.xcassets in Resources */,
 				BA132CF61F034D50002BD39B /* MJRefresh.bundle in Resources */,
 				BA163C9E1F0245F500FE64FD /* LICENSE in Resources */,
 				BA47EAA71F0109CD00B7F2AE /* LaunchScreen.storyboard in Resources */,
+				BA496C711F78896F00D4CE41 /* Assets.xcassets in Resources */,
 				BA132CE71F034D50002BD39B /* LICENSE in Resources */,
 				BA132D0D1F035BC9002BD39B /* LICENSE.txt in Resources */,
 			);
