@@ -19,4 +19,10 @@
               success:(void(^)(id response))success
               failure:(void(^)(NSError *error))failure;
 
+- (void)moodwall_getWithURL:(NSString *)url
+                     params:(id)params
+                    success:(void(^)(id response))success
+                    failure:(void(^)(NSError *error))failure;
+
+
 @end

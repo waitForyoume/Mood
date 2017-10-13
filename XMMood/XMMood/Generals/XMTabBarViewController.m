@@ -9,7 +9,9 @@
 #import "XMTabBarViewController.h"
 #import "XMMoodViewController.h"
 #import "XMLoveViewController.h"
-#import "XMSettingViewController.h"
+#import "XMMineViewController.h"
+#import "XMMoodwallViewController.h"
+
 
 @interface XMTabBarViewController ()
 
@@ -25,17 +27,17 @@
     moodNA.tabBarItem.image = [UIImage imageNamed:@"normal_1_select"];
     moodNA.tabBarItem.selectedImage = [[UIImage imageNamed:@"normal_1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    XMLoveViewController *loveView = [[XMLoveViewController alloc] init];
-    UINavigationController *loveNA = [[UINavigationController alloc] initWithRootViewController:loveView];
-    loveNA.tabBarItem.image = [UIImage imageNamed:@"normal_2_select"];
-    loveNA.tabBarItem.selectedImage = [[UIImage imageNamed:@"normal_2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    XMMoodwallViewController *moodwallView = [[XMMoodwallViewController alloc] init];
+    UINavigationController *moodwallNA = [[UINavigationController alloc] initWithRootViewController:moodwallView];
+    moodwallNA.tabBarItem.image = [UIImage imageNamed:@"moodwall"];
+    moodwallNA.tabBarItem.selectedImage = [[UIImage imageNamed:@"moodwall_select"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    XMSettingViewController *settingView = [[XMSettingViewController alloc] init];
-    UINavigationController *settingNA = [[UINavigationController alloc] initWithRootViewController:settingView];
-    settingNA.tabBarItem.image = [UIImage imageNamed:@"normal_3_select"];
-    settingNA.tabBarItem.selectedImage = [[UIImage imageNamed:@"normal_3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    XMMineViewController *mineView = [[XMMineViewController alloc] init];
+    UINavigationController *mineNA = [[UINavigationController alloc] initWithRootViewController:mineView];
+    mineNA.tabBarItem.image = [UIImage imageNamed:@"personal_3"];
+    mineNA.tabBarItem.selectedImage = [[UIImage imageNamed:@"personal_3_select"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    self.viewControllers = @[moodNA, loveNA, settingNA];
+    self.viewControllers = @[moodNA, moodwallNA, mineNA];
     
     [UINavigationBar appearance].tintColor = kCOLOR_RGBA(16, 16, 16, 1);
     [UINavigationBar appearance].titleTextAttributes = [NSMutableDictionary dictionaryWithObjectsAndKeys:NSFontAttributeName, [UIFont systemFontOfSize:17.5f], NSForegroundColorAttributeName, kCOLOR_RGBA(16, 16, 16, 1), nil];
