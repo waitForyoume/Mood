@@ -10,6 +10,9 @@
 
 #define kHTTPManager [XMHttpManager httpManager]
 
+typedef void(^XMSuccess)(id response);
+typedef void(^XMFailure)(NSError *error);
+
 @interface XMHttpManager : NSObject
 
 + (XMHttpManager *)httpManager;
@@ -23,6 +26,22 @@
                      params:(id)params
                     success:(void(^)(id response))success
                     failure:(void(^)(NSError *error))failure;
+
+- (void)article_getWithURL:(NSString *)url
+                    params:(id)params
+                   success:(void(^)(id response))success
+                   failure:(void(^)(NSError *error))failure;
+
+- (void)articledetail_getWithURL:(NSString *)url
+                   params:(id)params
+                  success:(void(^)(id response))success
+                  failure:(void(^)(NSError *error))failure;
+
+- (void)sentence_getWithURL:(NSString *)url
+                     params:(id)params
+                    success:(void(^)(id response))success
+                    failure:(void(^)(NSError *error))failure;
+
 
 
 @end

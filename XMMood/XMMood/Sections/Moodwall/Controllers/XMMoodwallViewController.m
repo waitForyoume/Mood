@@ -81,14 +81,13 @@
                 
                 [self.resourceArray removeAllObjects];
             }
+           
+            NSDictionary *dictionary = [response isKindOfClass:[NSDictionary class]] ? response : nil;
             
-            NSString *sourceString = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
-            
-            NSArray *array = [sourceString componentsSeparatedByString:@"<string xmlns=\"http://www.wenzizhan.com/\">"];
-            NSString *lastString = array.lastObject;
-            NSString *responseString = [lastString componentsSeparatedByString:@"</string>"].firstObject;
-            NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:[responseString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
-            [self moodwallAnalyze:dictionary[@"data"]];
+            if (dictionary != nil) {
+                
+                [self moodwallAnalyze:dictionary[@"data"]];
+            }
             
         } failure:^(NSError *error) {
             

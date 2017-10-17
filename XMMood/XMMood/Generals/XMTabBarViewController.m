@@ -11,6 +11,7 @@
 #import "XMLoveViewController.h"
 #import "XMMineViewController.h"
 #import "XMMoodwallViewController.h"
+#import "XMOthersViewController.h"
 
 
 @interface XMTabBarViewController ()
@@ -32,12 +33,17 @@
     moodwallNA.tabBarItem.image = [UIImage imageNamed:@"moodwall"];
     moodwallNA.tabBarItem.selectedImage = [[UIImage imageNamed:@"moodwall_select"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
+    XMOthersViewController *othersView = [[XMOthersViewController alloc] init];
+    UINavigationController *otherNA = [[UINavigationController alloc] initWithRootViewController:othersView];
+    otherNA.tabBarItem.image = [UIImage imageNamed:@"qita_10.16"];
+    otherNA.tabBarItem.selectedImage = [[UIImage imageNamed:@"qita_select_10.16"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
     XMMineViewController *mineView = [[XMMineViewController alloc] init];
     UINavigationController *mineNA = [[UINavigationController alloc] initWithRootViewController:mineView];
     mineNA.tabBarItem.image = [UIImage imageNamed:@"personal_3"];
     mineNA.tabBarItem.selectedImage = [[UIImage imageNamed:@"personal_3_select"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    self.viewControllers = @[moodNA, moodwallNA, mineNA];
+    self.viewControllers = @[moodNA, moodwallNA, otherNA, mineNA];
     
     [UINavigationBar appearance].tintColor = kCOLOR_RGBA(16, 16, 16, 1);
     [UINavigationBar appearance].titleTextAttributes = [NSMutableDictionary dictionaryWithObjectsAndKeys:NSFontAttributeName, [UIFont systemFontOfSize:17.5f], NSForegroundColorAttributeName, kCOLOR_RGBA(16, 16, 16, 1), nil];

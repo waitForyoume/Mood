@@ -8,7 +8,7 @@
 
 #import "XMSettingCell.h"
 
-#define kSETTING_FONT [UIFont systemFontOfSize:17.5f]
+#define kSETTING_FONT [UIFont systemFontOfSize:16.0f]
 
 @implementation XMSettingCell
 

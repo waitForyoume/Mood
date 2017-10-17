@@ -45,10 +45,29 @@
     }];
 }
 
+- (void)article_getWithURL:(NSString *)url params:(id)params success:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    
+    [self getWithURL:url params:params success:success failure:failure];
+}
+
+- (void)articledetail_getWithURL:(NSString *)url params:(id)params success:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    [self getWithURL:url params:params success:success failure:failure];
+}
+
 - (void)moodwall_getWithURL:(NSString *)url params:(id)params success:(void (^)(id))success failure:(void (^)(NSError *))failure {
     
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [self getWithURL:url params:params success:success failure:failure];
+}
 
+- (void)sentence_getWithURL:(NSString *)url params:(id)params success:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    
+    [self getWithURL:url params:params success:success failure:failure];
+}
+
+- (void)getWithURL:(NSString *)url params:(id)params success:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
     manager.requestSerializer.timeoutInterval = 10;
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     
@@ -58,7 +77,14 @@
         
         if (responseObject) {
             
-            success(responseObject);
+            NSString *sourceString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+            
+            NSArray *array = [sourceString componentsSeparatedByString:@"<string xmlns=\"http://www.wenzizhan.com/\">"];
+            NSString *lastString = array.lastObject;
+            NSString *responseString = [lastString componentsSeparatedByString:@"</string>"].firstObject;
+            NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:[responseString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
+            
+            success(dictionary);
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
